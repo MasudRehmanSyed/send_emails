@@ -23,7 +23,7 @@ def send_email(wishes, email):
     with smtplib.SMTP("smtp.gmail.com", 587, timeout=120) as connection:
         # secure connection transport layer security tls
         connection.starttls()
-        connection.login(user='udemy100masud@gmail.com', password=pass)
+        connection.login(user=my_email, password=pass)
         connection.sendmail(
             from_addr=my_email,
             to_addrs=email,
