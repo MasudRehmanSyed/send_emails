@@ -2,7 +2,8 @@ import smtplib, random as rd, datetime as dt, pandas as pd
 from pathlib import Path
 
 
-my_email = 'udemy100masud@gmail.com'
+my_email = MY_EMAIL
+pass = MY_PASSWORD
 # access mailbox create an object
 letter_number = f'./letter_templates/letter_{rd.randint(1,3)}.txt'
 file = open('quotes.txt', 'r')
@@ -22,7 +23,7 @@ def send_email(wishes, email):
     with smtplib.SMTP("smtp.gmail.com", 587, timeout=120) as connection:
         # secure connection transport layer security tls
         connection.starttls()
-        connection.login(user='udemy100masud@gmail.com', password='angelayu#')
+        connection.login(user='udemy100masud@gmail.com', password=pass)
         connection.sendmail(
             from_addr=my_email,
             to_addrs=email,
